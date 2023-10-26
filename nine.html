@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div{
+            display: flex;
+            gap: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <button onclick="login()">Login</button>
+        <button onclick="logout()">Logout</button>
+    </div>
+    <h1 id="status">User Has Not logged In</h1>
+
+    <script>
+        function login(){
+            localStorage.setItem("auth", true)
+            window.location.reload();
+        }
+
+        function logout(){
+            localStorage.setItem("auth", false)
+            window.location.reload();
+        }
+
+        const heading=document.getElementById("status")
+        const loginStatus=localStorage.getItem("auth")
+        if(loginStatus==="true"){
+            heading.innerHTML="user is logged in";
+        }
+        else{
+            heading.innerHTML="user has not logged in"
+        }
+
+    </script>
+    
+</body>
+</html>

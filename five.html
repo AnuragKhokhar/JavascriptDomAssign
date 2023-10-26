@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1 id="text">Your Image is visible</h1>
+    <button id="btn" onclick="toggle()">Toggle Image</button><br><br>
+    <img id="image" src="https://shorturl.at/yA189" alt="image">
+    <script>
+        var text=document.getElementById("text")
+        const image=document.getElementById("image")
+        function toggle(){
+            if(image.style.display==="none"){
+                image.style.display="inline"
+                text.innerHTML="Your Image is Visible"
+            }
+            else{
+                image.style.display="none"
+                text.innerHTML="Your Image is Hidden"
+            }
+        }
+    </script>
+
+</body>
+</html>
